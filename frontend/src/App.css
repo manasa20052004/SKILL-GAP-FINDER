@@ -1,0 +1,322 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f5f7fb;
+  color: #222;
+}
+
+.app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* HEADER */
+
+.top-header {
+  background: white;
+  padding: 20px;
+  text-align: center;
+  border-bottom: 1px solid #ddd;
+}
+
+.top-header h1 {
+  margin: 0 0 15px;
+  font-size: 28px;
+}
+
+.top-nav {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+}
+
+.top-nav button {
+  min-width: 120px;
+}
+
+/* BUTTON */
+
+button {
+  border: none;
+  background: #0b2f6b;
+  color: white;
+  padding: 13px 20px;
+  border-radius: 7px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+button:hover {
+  background: #164b9b;
+}
+
+button.active {
+  background: #164b9b;
+}
+
+/* MAIN */
+
+main {
+  flex: 1;
+  padding: 30px 20px 50px;
+}
+
+/* HOME */
+
+.home-page {
+  max-width: 900px;
+  margin: auto;
+}
+
+/* HERO */
+
+.hero {
+  text-align: center;
+  margin: 20px auto 30px;
+}
+
+.hero h2 {
+  font-size: 40px;
+  margin-bottom: 10px;
+}
+
+.hero p {
+  font-size: 18px;
+  color: #555;
+  line-height: 1.5;
+}
+
+/* FORM */
+
+.skill-form {
+  background: white;
+  max-width: 700px;
+  margin: auto;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 3px 15px rgba(0, 0, 0, 0.08);
+}
+
+.skill-form h2 {
+  text-align: center;
+  margin-top: 0;
+}
+
+.skill-form label {
+  display: block;
+  margin-top: 20px;
+  margin-bottom: 8px;
+  font-weight: bold;
+}
+
+.skill-form input,
+.skill-form select {
+  width: 100%;
+  padding: 13px;
+  border: 1px solid #ccc;
+  border-radius: 7px;
+  font-size: 16px;
+  background: white;
+  color: #222;
+}
+
+.skill-form input:focus,
+.skill-form select:focus {
+  outline: 2px solid #164b9b;
+  border-color: #164b9b;
+}
+
+.find-button {
+  width: 100%;
+  margin-top: 25px;
+}
+
+/* RESULT */
+
+.result-section {
+  background: white;
+  max-width: 800px;
+  margin: 30px auto;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 3px 15px rgba(0, 0, 0, 0.08);
+  text-align: center;
+}
+
+.result-section h2 {
+  margin-top: 0;
+}
+
+.percentage {
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+  background: #0b2f6b;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 20px auto;
+  font-size: 27px;
+  font-weight: bold;
+}
+
+.result-text {
+  color: #555;
+}
+
+/* SKILLS */
+
+.skills-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  margin-top: 25px;
+  text-align: left;
+}
+
+.skill-box {
+  border: 1px solid #ddd;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.skill-box h3 {
+  text-align: center;
+}
+
+.skill-box ul {
+  padding-left: 25px;
+}
+
+.skill-box li {
+  margin: 10px 0;
+}
+
+/* RESULT BUTTONS */
+
+.result-buttons {
+  display: flex;
+  gap: 15px;
+  margin-top: 25px;
+}
+
+.result-buttons button {
+  flex: 1;
+}
+
+.save-progress {
+  background: #0b2f6b;
+}
+
+.dashboard-button {
+  background: #555;
+}
+
+.dashboard-button:hover {
+  background: #333;
+}
+
+/* DASHBOARD */
+
+.dashboard-page {
+  max-width: 800px;
+  margin: auto;
+  text-align: center;
+}
+
+.dashboard-page > h2 {
+  font-size: 32px;
+  margin-bottom: 30px;
+}
+
+.dashboard-card,
+.empty-dashboard {
+  background: white;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 3px 15px rgba(0, 0, 0, 0.08);
+}
+
+.dashboard-card h2 {
+  margin-top: 0;
+}
+
+.dashboard-percentage {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background: #0b2f6b;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 25px auto;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.dashboard-section {
+  text-align: left;
+  margin-top: 25px;
+}
+
+.dashboard-section h3 {
+  text-align: center;
+}
+
+.dashboard-section ul {
+  max-width: 400px;
+  margin: auto;
+}
+
+.dashboard-section li {
+  margin: 9px 0;
+}
+
+/* FOOTER */
+
+footer {
+  background: white;
+  border-top: 1px solid #ddd;
+  text-align: center;
+  padding: 20px;
+  color: #666;
+}
+
+/* MOBILE */
+
+@media (max-width: 700px) {
+
+  .hero h2 {
+    font-size: 32px;
+  }
+
+  .skill-form,
+  .result-section,
+  .dashboard-card,
+  .empty-dashboard {
+    padding: 20px;
+  }
+
+  .skills-container {
+    grid-template-columns: 1fr;
+  }
+
+  .result-buttons {
+    flex-direction: column;
+  }
+
+  .top-nav {
+    flex-direction: row;
+  }
+
+  .top-nav button {
+    width: 120px;
+  }
+}
