@@ -32,3 +32,8 @@ pnpm-debug.log*
 *.sln
 .DS_Store
 Thumbs.db
+
+.env
+backend/.env
+frontend/.env
+terminal-history.txt
