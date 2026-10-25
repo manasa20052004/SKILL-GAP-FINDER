@@ -19,7 +19,7 @@ const db = mysql.createPool({
   password: process.env.DB_PASSWORD,
   database: process.env.DB_NAME || "skill_gap_finder",
 
-  // Use Aiven CA certificate for secure database connections
+  // Secure connection using the Aiven CA certificate
   ssl: process.env.DB_HOST
     ? {
         ca: fs.readFileSync(
@@ -52,11 +52,13 @@ app.get("/api/health", async (req, res) => {
       message: "Backend and database connected successfully"
     });
   } catch (error) {
-    console.error("Database health check failed:", error.message);
+    console.error("Database health check failed:", error);
 
     res.status(500).json({
       status: "ERROR",
-      message: "Database connection failed"
+      message: "Database connection failed",
+      code: error.code || "UNKNOWN",
+      detail: error.message
     });
   }
 });
@@ -100,7 +102,8 @@ app.post("/api/progress", async (req, res) => {
       Number(match_percentage) > 100
     ) {
       return res.status(400).json({
-        message: "Please provide valid skills, target role, and percentage."
+        message:
+          "Please provide valid skills, target role, and percentage."
       });
     }
 
@@ -143,7 +146,7 @@ app.get("/api/progress", async (req, res) => {
     console.error("Fetch progress failed:", error.message);
 
     res.status(500).json({
-      message: "Could not fetch saved progress."
+      message: "Could not fetch progress."
     });
   }
 });
